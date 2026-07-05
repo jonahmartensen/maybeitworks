@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>about</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="nav-left">
+        <a href="index.html">jonah martensen</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="news.html">news</a>
+        <a href="about.html" class="active">about</a>
+        <a href="contact.html">contact</a>
+      </div>
+    </nav>
+  </header>
+
+   <main class="page-with-sidebar">
+  <button class="press-button" type="button">press</button>
+
+  <div class="popup" id="press-popup" aria-hidden="true">
+    <div class="popup-content">
+      <p>Place your text here.</p>
+      <button class="popup-close" type="button">close</button>
+    </div>
+  </div>
+
+  <div class="about-text">
+ <p>Jonah Martensen’s work could best be described as: A grotesque musical of and for those characters and feelings that would never make it to Broadway.</p>
+<p>In their practice dancing and writing and singing and staging find a shared home. A bold and personal performer, Jonah Martensen strives to reinvent the „Jack of all trades“ into a „master of all“.</p>
+<p>Jonah Martensen is artist, dancer, and performer. They study Fine Arts at the Bauhaus-University (BUW) in Weimar, Germany and Contemporary and Classical Dance at the University of Arts and Music of the city of Vienna (MUK) in Vienna, Austria. As part of the collective IMMA, Jonah Martensen brings experimental dance narratives to stages and off-spaces across Europe.</p>
+<p>Their works examine the conditions under which humans love and live. The urban meets the rural, baroque composers meet German Schlager and twenty-first century noise artists. For them, friction is productive. A core part of Jonah Martensen’s practice is combining different media and techniques: they are trained in knitting, classical singing, many styles of dance, object installations as well as theatre-directing and acting.</p> 
+<p></p>
+<p>ENGAGEMENT</p>
+<p>2025</p>
+<p>the script, by Isabel Lewis, opening performance of TanzQuartierWien, Vienna (AT) <a href="https://www.tqw.at/veranstaltungen/the-script">>>></a></p>
+<p></p>
+    <p>orgien-mysterien-theater, by Hermann Nitsch, last three days of his six day play, Schloss Prinzendorf (AT) <a href="https://www.nitsch-foundation.com/news/das-6-tage-spiel-2025/">>>></a></p>
+   <p></p>
+<p>playing: animal farm, by Anna Weber, Philipp Amelungsen, and Philip Venables, interactive game-show theatre, DNT Weimar (DE) <a href="https://www.dnt-weimar.de/de/programm/stueck-detail.php?SID=3294">>>></a></p>
+    <p></p>
+<p>new year's eve gala, by Steffi Wieser, Wiener Konzerthaus (AT)</p>
+    <p></p>
+    --
+    <p>EXHIBITIONS</p>
+    <p>as artist</p>
+    
+    <p>2023</p>
+    <p>summaery with Klasse Dahlem, KET-Halle, Weimar (DE)  <a href="ket.html">>>></a></p>
+    <p>2022</p>
+    <p>winterwerkschau22 with Klasse Dahlem, Bauhaus-Universität, Weimar (DE)</p>
+    <p></p>
+    <p>--</p>
+    <p>as curator</p>
+    <p>2024</p>
+     <p>Himmelskörper, IRRE-Space, Weimar (DE)</p>
+    <p>2023</p>
+    <p>Schön Hier, IRRE-Space, Weimar (DE) <a href="https://www.instagram.com/p/C9IwAPaMxqh/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">>>></a></p>
+    <p>IT'S HOT IN THE POT, IRRE-Space, Weimar (DE) <a href="https://www.instagram.com/p/DSpVIMdDf9L/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">>>></a></p>
+    <p>ich fühle was, was du nicht fühlst, IRRE-Space, Weimar (DE) <a href="https://www.instagram.com/p/C8FF6XOsXuN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">>>></a></p>
+    <p>can't stop won't stop, Schillermuseum, Weimar (DE) <a href="https://www.instagram.com/p/Cx_TFqSs6P6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">>>></a></p>
+   
+  </div>  
+   </main>
+
+
+
+  <script>
+    const pressButton = document.querySelector('.press-button');
+    const popup = document.getElementById('press-popup');
+    const closeButton = document.querySelector('.popup-close');
+
+    pressButton.addEventListener('click', () => {
+      popup.classList.add('visible');
+      popup.setAttribute('aria-hidden', 'false');
+    });
+
+    closeButton.addEventListener('click', () => {
+      popup.classList.remove('visible');
+      popup.setAttribute('aria-hidden', 'true');
+    });
+
+    popup.addEventListener('click', (event) => {
+      if (event.target === popup) {
+        popup.classList.remove('visible');
+        popup.setAttribute('aria-hidden', 'true');
+      }
+    });
+  </script>
+</body>
+</html>
