@@ -11,11 +11,98 @@
 
     <div class="hero-overlay">
       <div class="hero-links">
-        <a href="agenda.html">AGENDA</a>
+        <a href="#" data-popup-target="agenda-popup">AGENDA</a>
         <a href="projects.html">PROJECTS</a>
         <a href="about.html">ABOUT</a>
       </div>
     </div>
+
+    <div class="popup" id="agenda-popup" aria-hidden="true">
+      <div class="popup-content">
+        <button class="popup-close" type="button" data-close-popup>close</button>
+
+        <div class="agenda-switcher" role="tablist" aria-label="Agenda sections">
+          <button class="agenda-tab active" data-target="upcoming-home" aria-selected="true">upcoming</button>
+          <button class="agenda-tab" data-target="past-home" aria-selected="false">past</button>
+        </div>
+
+        <section class="agenda-panel active" id="upcoming-home">
+          <article class="agenda-item">
+            <h3><a href="https://literatur-wuerzburg.de/lesebuehne/">15th July, Junge Lesebühne, Jugendkulturhaus Cairo</a></h3>
+            <p>reading of texts and poems, also part of KLW magazine issue no. 17</p>
+          </article>
+        </section>
+
+        <section class="agenda-panel" id="past-home">
+          <article class="agenda-item">
+            <h3><a href="freund.html">12th June, freund</a></h3>
+            <p>in collaboration with Moritz Grossmann, performed at SHARE Festival, Bratislava (SK)</p>
+          </article>
+          <article class="agenda-item">
+            <h3><a href="https://www.instagram.com/p/DaZ1-eSCKm1/?img_index=1">27th May, bittersweet bliss by Selin Baran</a></h3>
+            <p>as performer, piece on motherhood; performed at MUK.theater, Vienna (AT)</p>
+          </article>
+        </section>
+      </div>
+    </div>
   </main>
+
+  <script>
+    const agendaLink = document.querySelector('[data-popup-target="agenda-popup"]');
+    const agendaPopup = document.getElementById('agenda-popup');
+    const closeAgendaPopup = agendaPopup.querySelector('[data-close-popup]');
+    const agendaTabs = agendaPopup.querySelectorAll('.agenda-tab');
+    const agendaPanels = agendaPopup.querySelectorAll('.agenda-panel');
+
+    function openAgendaPopup() {
+      agendaPopup.classList.add('visible');
+      agendaPopup.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAgendaPopupHandler() {
+      agendaPopup.classList.remove('visible');
+      agendaPopup.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (agendaLink) {
+      agendaLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        openAgendaPopup();
+      });
+    }
+
+    if (closeAgendaPopup) {
+      closeAgendaPopup.addEventListener('click', closeAgendaPopupHandler);
+    }
+
+    agendaPopup.addEventListener('click', (event) => {
+      if (event.target === agendaPopup) {
+        closeAgendaPopupHandler();
+      }
+    });
+
+    agendaTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.target;
+
+        agendaTabs.forEach((button) => {
+          button.classList.toggle('active', button === tab);
+          button.setAttribute('aria-selected', String(button === tab));
+        });
+
+        agendaPanels.forEach((panel) => {
+          panel.classList.toggle('active', panel.id === target);
+        });
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && agendaPopup.classList.contains('visible')) {
+        closeAgendaPopupHandler();
+      }
+    });
+  </script>
 </body>
 </html>
