@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agenda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-left">
+        <a href="index.html">jonah martensen</a>
+      </div>
+      <div class="nav-right">
+        <a href="news.html">news</a>
+        <a href="about.html">about</a>
+        <a href="contact.html">contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="agenda-page">
+    <div class="agenda-switcher" role="tablist" aria-label="Agenda sections">
+      <button class="agenda-tab active" data-target="upcoming" aria-selected="true">upcoming</button>
+      <button class="agenda-tab" data-target="past" aria-selected="false">past</button>
+    </div>
+
+    <section class="agenda-panel active" id="upcoming">
+      <article class="agenda-item">
+        <h3>Opening performance</h3>
+        <p>Performance in Vienna this autumn.</p>
+      </article>
+      <article class="agenda-item">
+        <h3>Workshop series</h3>
+        <p>New movement and vocal sessions in Weimar.</p>
+      </article>
+    </section>
+
+    <section class="agenda-panel" id="past">
+      <article class="agenda-item">
+        <h3>Festival appearance</h3>
+        <p>Previously shown at an experimental arts festival.</p>
+      </article>
+      <article class="agenda-item">
+        <h3>Group residency</h3>
+        <p>Completed residency in collaboration with local artists.</p>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const tabs = document.querySelectorAll('.agenda-tab');
+    const panels = document.querySelectorAll('.agenda-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.target;
+
+        tabs.forEach(button => {
+          button.classList.toggle('active', button === tab);
+          button.setAttribute('aria-selected', String(button === tab));
+        });
+
+        panels.forEach(panel => {
+          panel.classList.toggle('active', panel.id === target);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
