@@ -1457,6 +1457,6 @@ body {
   }
 
   .hero-links a {
-    font-size: clamp(1.6rem, 7vw, 2.4rem);
+    font-size: clamp(1rem, 5vw, 1.6rem);
   }
 }
