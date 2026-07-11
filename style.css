@@ -239,7 +239,7 @@ nav a:hover,
 }
 
 .gallery-item:first-child {
-  height: 85vh;
+  height: 75vh;
   overflow: hidden;
 }
 
