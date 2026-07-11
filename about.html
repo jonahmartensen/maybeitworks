@@ -80,29 +80,5 @@
   </div>
    </main>
 
-  <script src="script.js"></script>
-
-  <script>
-    const pressButton = document.querySelector('.press-button');
-    const popup = document.getElementById('press-popup');
-    const closeButton = document.querySelector('.popup-close');
-
-    pressButton.addEventListener('click', () => {
-      popup.classList.add('visible');
-      popup.setAttribute('aria-hidden', 'false');
-    });
-
-    closeButton.addEventListener('click', () => {
-      popup.classList.remove('visible');
-      popup.setAttribute('aria-hidden', 'true');
-    });
-
-    popup.addEventListener('click', (event) => {
-      if (event.target === popup) {
-        popup.classList.remove('visible');
-        popup.setAttribute('aria-hidden', 'true');
-      }
-    });
-  </script>
 </body>
 </html>
