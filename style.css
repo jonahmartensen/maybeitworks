@@ -1,6 +1,6 @@
 :root {
   --text-color: #111;
-  --bg-color: #FF7F50;
+  --bg-color: #fff;
   --border-color: #ddd;
   --nav-size: clamp(1.2rem, 2vw, 2.1rem);
   --hero-size: clamp(2.4rem, 8vw, 6rem);
