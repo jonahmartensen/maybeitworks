@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JONAH MARTENSEN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="project-page">
+    <section class="hero-screen">
+      <img class="hero-image" src="images/freund2.jpg" alt="Featured artwork">
+
+      <header>
+        <nav>
+          <div class="nav-left">
+            <a href="index.html">HOME</a>
+          </div>
+          <div class="nav-right">
+            <a href="projects.html" class="active">PROJECTS</a>
+            <a href="agenda.html">AGENDA</a>
+            <a href="about.html">ABOUT</a>
+          </div>
+        </nav>
+      </header>
+    </section>
+
+    <section class="project-content">
+      <div class="project-text">
+        <p>freund is a study in image, duration, and the afterimage that lingers when a scene slips out of frame.</p>
+        <p>The work asks how a body can remain visible long after the camera has passed. Memory becomes a second structure, overlapping the first one like a soft echo.</p>
+        <p>Each gesture is held just long enough for its atmosphere to become legible, and each stillness carries the pressure of what might happen next.</p>
+      </div>
+
+      <div class="detail-text">
+        <p>small notes, quick fragments, and suspended details gathered during the process.</p>
+        <p>the frame breathes slowly, the light shifts, and the image accumulates its own private history.</p>
+      </div>
+
+      <section class="detail-gallery" aria-label="Project detail gallery">
+        <article class="detail-gallery-item">
+          <button class="detail-gallery-button" type="button" data-image="images/freund2.jpg" aria-label="Open project image in full screen">
+            <img src="images/freund2.jpg" alt="Project detail image one">
+          </button>
+        </article>
+        <article class="detail-gallery-item">
+          <button class="detail-gallery-button" type="button" data-image="images/ROSAALBA1.jpeg" aria-label="Open project image in full screen">
+            <img src="images/freund1.jpg" alt="Project detail image two">
+          </button>
+        </article>
+        <article class="detail-gallery-item">
+          <button class="detail-gallery-button" type="button" data-image="images/freund2.jpg" aria-label="Open project image in full screen">
+            <img src="images/freund3.jpg" alt="Project detail image three">
+          </button>
+        </article>
+        <article class="detail-gallery-item">
+          <button class="detail-gallery-button" type="button" data-image="images/ROSAALBA1.jpeg" aria-label="Open project image in full screen">
+            <img src="images/freund4.jpg" alt="Project detail image four">
+          </button>
+        </article>
+        <article class="detail-gallery-item">
+          <button class="detail-gallery-button" type="button" data-image="images/freund2.jpg" aria-label="Open project image in full screen">
+            <img src="images/freund5.jpg" alt="Project detail image five">
+          </button>
+        </article>
+        <article class="detail-gallery-item">
+          <button class="detail-gallery-button" type="button" data-image="images/ROSAALBA1.jpeg" aria-label="Open project image in full screen">
+            <img src="images/freund6.jpg" alt="Project detail image six">
+          </button>
+        </article>
+        <article class="detail-gallery-item">
+          <button class="detail-gallery-button" type="button" data-image="images/freund2.jpg" aria-label="Open project image in full screen">
+            <img src="images/freund7.jpg" alt="Project detail image seven">
+          </button>
+        </article>
+        <article class="detail-gallery-item">
+          <button class="detail-gallery-button" type="button" data-image="images/ROSAALBA1.jpeg" aria-label="Open project image in full screen">
+            <img src="images/freund8.jpg" alt="Project detail image eight">
+          </button>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <div class="image-modal" id="detail-image-modal" aria-hidden="true">
+    <button class="image-modal-close" type="button" aria-label="Close image">close</button>
+    <img src="" alt="Enlarged project detail">
+  </div>
+
+  <script>
+    const detailButtons = document.querySelectorAll('.detail-gallery-button');
+    const imageModal = document.getElementById('detail-image-modal');
+    const imageModalImage = imageModal.querySelector('img');
+    const imageModalClose = imageModal.querySelector('.image-modal-close');
+
+    const showImageModal = (imageSrc) => {
+      imageModalImage.src = imageSrc;
+      imageModal.classList.add('visible');
+      imageModal.setAttribute('aria-hidden', 'false');
+    };
+
+    const hideImageModal = () => {
+      imageModal.classList.remove('visible');
+      imageModal.setAttribute('aria-hidden', 'true');
+    };
+
+    detailButtons.forEach((button) => {
+      button.addEventListener('click', () => showImageModal(button.dataset.image));
+    });
+
+    imageModalClose.addEventListener('click', hideImageModal);
+
+    imageModal.addEventListener('click', (event) => {
+      if (event.target === imageModal) {
+        hideImageModal();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
