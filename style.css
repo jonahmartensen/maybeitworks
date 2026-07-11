@@ -220,15 +220,15 @@ nav a:hover,
 }
 
 .projects-page {
-  padding: 40px 30px 120px;
+  padding: 40px 0 120px;
   overflow-x: hidden;
 }
 
 .gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1%;
+  width: 90vw;
   margin: 0 auto;
 }
 
@@ -243,27 +243,16 @@ nav a:hover,
   width: 100%;
   height: 100%;
   position: relative;
-}
-
-.gallery-item:first-child {
-  height: 75vh;
   overflow: hidden;
-}
-
-.gallery-item:first-child img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  border: 1px solid var(--border-color);
 }
 
 .gallery-item img {
   width: 100%;
+  aspect-ratio: 16 / 9;
   height: auto;
   display: block;
   object-fit: cover;
+  object-position: center;
   border: 1px solid var(--border-color);
 }
 
@@ -273,8 +262,10 @@ nav a:hover,
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 0 12px;
   color: #fff;
-  font-size: clamp(4.335rem, 11.56vw, 15.1725rem);
+  font-size: clamp(2.4rem, 6vw, 6rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -282,6 +273,7 @@ nav a:hover,
   opacity: 0;
   transition: opacity 0.2s ease;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .gallery-item:hover .gallery-overlay {
