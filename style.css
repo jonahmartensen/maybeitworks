@@ -188,7 +188,7 @@ nav a:hover,
 }
 
 .detail-text p {
-  font-size: clamp(8px, 1.2vw, 9px);
+  font-size: clamp(16px, 2vw, 18px);
 }
 
 .news-image-container {
