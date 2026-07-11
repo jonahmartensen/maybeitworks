@@ -16,7 +16,25 @@ function stackGalleryItemsVertically() {
   });
 }
 
+function makeExternalLinksOpenInNewTab() {
+  document.querySelectorAll('a[href]').forEach((link) => {
+    const href = link.getAttribute('href');
+
+    if (!href || href.startsWith('#')) {
+      return;
+    }
+
+    const url = new URL(href, window.location.href);
+
+    if (url.origin !== window.location.origin) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  makeExternalLinksOpenInNewTab();
   stackGalleryItemsVertically();
 
   const preview = document.querySelector('.hover-preview');
