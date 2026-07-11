@@ -5,9 +5,11 @@ function stackGalleryItemsVertically() {
     return;
   }
 
-  gallery.style.display = 'flex';
-  gallery.style.flexDirection = 'column';
-  gallery.style.gap = '24px';
+  gallery.style.display = 'grid';
+  gallery.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))';
+  gallery.style.gap = '1%';
+  gallery.style.width = '90vw';
+  gallery.style.margin = '0 auto';
 
   gallery.querySelectorAll('.gallery-item').forEach((item) => {
     item.style.display = 'block';
