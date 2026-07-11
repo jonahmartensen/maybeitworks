@@ -81,7 +81,7 @@
     </section>
   </main>
 
-  <div class="image-modal" id="detail-image-modal" aria-hidden="true">
+   <div class="image-modal" id="detail-image-modal" aria-hidden="true">
     <button class="image-modal-close" type="button" aria-label="Close image">close</button>
     <img src="" alt="Enlarged project detail">
   </div>
@@ -116,3 +116,8 @@
     });
 
     document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && imageModal.classList.contains('visible')) {
+        hideImageModal();
+      }
+    });
+  </script>
