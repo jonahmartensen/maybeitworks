@@ -116,6 +116,19 @@ nav a:hover,
   max-width: 920px;
 }
 
+.project-page {
+  min-height: 100%;
+}
+
+.project-content {
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 56px 30px 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .press-button {
   position: fixed;
   left: 8px;
@@ -162,10 +175,20 @@ nav a:hover,
 }
 
 .about-text p,
-.news-text p {
+.news-text p,
+.project-text p,
+.detail-text p {
   margin: 0 0 16px;
   font-size: 18px;
   line-height: 1.5;
+}
+
+.project-text p {
+  font-size: clamp(32px, 4vw, 36px);
+}
+
+.detail-text p {
+  font-size: clamp(8px, 1.2vw, 9px);
 }
 
 .news-image-container {
@@ -248,29 +271,37 @@ nav a:hover,
   overflow-x: hidden;
 }
 
-.gallery {
+.gallery,
+.detail-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1%;
   width: 95vw;
-  margin: 0 auto;
+  margin: 40px auto 0;
 }
 
-.gallery-item {
+.gallery-item,
+.detail-gallery-item {
   position: relative;
   width: 100%;
   margin: 0;
 }
 
-.gallery-link {
+.gallery-link,
+.detail-gallery-button {
   display: block;
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-.gallery-item img {
+.gallery-item img,
+.detail-gallery-button img {
   width: 100%;
   aspect-ratio: 4 / 3;
   height: auto;
@@ -278,6 +309,12 @@ nav a:hover,
   object-fit: cover;
   object-position: center;
   border: 1px solid var(--border-color);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.gallery-item:hover img,
+.detail-gallery-button:hover img {
+  transform: scale(1.02);
 }
 
 .gallery-overlay {
@@ -302,6 +339,41 @@ nav a:hover,
 
 .gallery-item:hover .gallery-overlay {
   opacity: 1;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+}
+
+.image-modal.visible {
+  display: flex;
+}
+
+.image-modal img {
+  width: min(75vw, 900px);
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  border: 1px solid var(--border-color);
+  background: white;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border: 1px solid #fff;
+  background: none;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
