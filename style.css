@@ -280,6 +280,11 @@ nav a:hover,
   margin: 40px auto 0;
 }
 
+.detail-gallery {
+  width: 100%;
+  margin: 40px 0 0;
+}
+
 .gallery-item,
 .detail-gallery-item {
   position: relative;
@@ -357,8 +362,8 @@ nav a:hover,
 }
 
 .image-modal img {
-  width: min(75vw, 900px);
-  max-height: 75vh;
+  width: min(105vw, 1260px);
+  max-height: 105vh;
   object-fit: contain;
   display: block;
   border: 1px solid var(--border-color);
