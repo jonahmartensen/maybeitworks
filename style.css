@@ -161,10 +161,34 @@ nav a:hover,
   cursor: pointer;
 }
 
-.about-text p {
+.about-text p,
+.news-text p {
   margin: 0 0 16px;
   font-size: 18px;
   line-height: 1.5;
+}
+
+.news-image-container {
+  position: fixed;
+  top: calc(20px + 2vh);
+  right: 2%;
+  width: min(32vw, 420px);
+  z-index: 2;
+}
+
+.news-image-container img {
+  width: 100%;
+  display: block;
+  height: auto;
+  border: 1px solid var(--border-color);
+}
+
+.news-text {
+  position: fixed;
+  top: calc(20px + 2vh + min(32vw, 420px) * 0.6 + 20px);
+  right: 2%;
+  width: min(32vw, 420px);
+  text-align: right;
 }
 
 .agenda-page {
