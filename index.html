@@ -5,9 +5,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="home-page">
   <main class="hero-screen">
-    <img id="hero-image" class="hero-image" src="images/freund/freund2.webp" alt="Featured artwork">
+    <img id="hero-image" class="hero-image" src="images/freund2.jpg" alt="Featured artwork">
 
     <div class="hero-overlay">
       <div class="hero-links">
@@ -46,7 +46,7 @@
   <script>
     const heroImage = document.getElementById('hero-image');
     const heroImages = [
-      { src: 'images/freund/freund2.webp', alt: 'Featured artwork' },
+      { src: 'images/freund2.jpg', alt: 'Featured artwork' },
       { src: 'images/horizont/horizont1.webp', alt: 'Featured artwork' },
       { src: 'images/keller/keller1.webp', alt: 'Featured artwork' }
     ];
@@ -64,7 +64,7 @@
     }
 
     if (heroImage && heroImages.length > 1) {
-      window.setInterval(rotateHeroImage, 8000);
+      window.setInterval(rotateHeroImage, 4000);
     }
 
     const agendaLink = document.querySelector('[data-popup-target="agenda-popup"]');
