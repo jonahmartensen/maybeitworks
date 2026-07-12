@@ -319,7 +319,7 @@ nav a:hover,
 
 .gallery-item:hover img,
 .detail-gallery-button:hover img {
-  transform: scale(1.02);
+  transform: scale(1.10);
 }
 
 .gallery-overlay {
@@ -331,7 +331,7 @@ nav a:hover,
   text-align: center;
   padding: 0 12px;
   color: #fff;
-  font-size: clamp(2.4rem, 6vw, 6rem);
+  font-size: clamp(1.2rem, 3vw, 3rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
