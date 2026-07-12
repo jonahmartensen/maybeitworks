@@ -305,6 +305,10 @@ nav a:hover,
   cursor: pointer;
 }
 
+.gallery-link {
+  isolation: isolate;
+}
+
 .gallery-item img,
 .detail-gallery-button img {
   width: 100%;
@@ -325,6 +329,7 @@ nav a:hover,
 .gallery-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
