@@ -22,6 +22,10 @@ body {
   background: var(--bg-color);
 }
 
+body:not(.home-page) {
+  padding-top: 88px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -363,6 +367,8 @@ nav a:hover,
   padding: 24px;
   background: rgba(0, 0, 0, 0.7);
   z-index: 2000;
+  overflow: auto;
+  box-sizing: border-box;
 }
 
 .image-modal.visible {
@@ -370,12 +376,14 @@ nav a:hover,
 }
 
 .image-modal img {
-  width: min(105vw, 1260px);
-  max-height: 105vh;
-  object-fit: contain;
   display: block;
+  width: auto;
+  height: auto;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 48px);
+  object-fit: contain;
   border: 1px solid var(--border-color);
-  background: white;
+  background: transparent;
 }
 
 .image-modal-close {
