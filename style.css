@@ -192,6 +192,8 @@ nav a:hover,
 
 .project-text p {
   font-size: clamp(24px, 3vw, 26px);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .detail-text p {
