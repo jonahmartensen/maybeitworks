@@ -191,7 +191,7 @@ nav a:hover,
 }
 
 .project-text p {
-  font-size: clamp(32px, 4vw, 36px);
+  font-size: clamp(24px, 3vw, 26px);
 }
 
 .detail-text p {
