@@ -288,9 +288,11 @@ nav a:hover,
 .detail-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1%;
-  width: 95vw;
+  gap: 2vw;
+  width: min(96vw, 1400px);
+  max-width: 1400px;
   margin: 40px auto 0;
+  padding: 0 1vw;
 }
 
 .detail-gallery {
