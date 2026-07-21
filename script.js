@@ -6,10 +6,12 @@ function stackGalleryItemsVertically() {
   }
 
   gallery.style.display = 'grid';
-  gallery.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))';
-  gallery.style.gap = '1%';
-  gallery.style.width = '95vw';
-  gallery.style.margin = '0 auto';
+  gallery.style.gridTemplateColumns = 'repeat(2, minmax(0, 1fr))';
+  gallery.style.gap = 'clamp(20px, 2.4vw, 36px)';
+  gallery.style.width = 'min(100%, 1280px)';
+  gallery.style.maxWidth = '1280px';
+  gallery.style.margin = '40px auto 0';
+  gallery.style.padding = '0 clamp(20px, 3vw, 36px)';
 
   gallery.querySelectorAll('.gallery-item').forEach((item) => {
     item.style.display = 'block';
