@@ -23,7 +23,7 @@ body {
 }
 
 body:not(.home-page) {
-  padding-top: 88px;
+  padding-top: 0;
 }
 
 a {
@@ -71,6 +71,12 @@ nav a:hover,
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+body:not(.home-page) .hero-screen {
+  height: 80vh;
+  min-height: 0;
+  margin-top: 0;
 }
 
 .hero-image {
@@ -327,7 +333,7 @@ nav a:hover,
 .gallery-item img,
 .detail-gallery-button img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   height: auto;
   display: block;
   object-fit: cover;
