@@ -1,25 +1,3 @@
-function stackGalleryItemsVertically() {
-  const gallery = document.querySelector('.gallery');
-
-  if (!gallery) {
-    return;
-  }
-
-  gallery.style.display = 'grid';
-  gallery.style.gridTemplateColumns = 'repeat(2, minmax(0, 1fr))';
-  gallery.style.gap = 'clamp(20px, 2.4vw, 36px)';
-  gallery.style.width = 'min(100%, 1280px)';
-  gallery.style.maxWidth = '1280px';
-  gallery.style.margin = '40px auto 0';
-  gallery.style.padding = '0 clamp(20px, 3vw, 36px)';
-
-  gallery.querySelectorAll('.gallery-item').forEach((item) => {
-    item.style.display = 'block';
-    item.style.width = '100%';
-    item.style.margin = '0';
-  });
-}
-
 function makeExternalLinksOpenInNewTab() {
   document.querySelectorAll('a[href]').forEach((link) => {
     const href = link.getAttribute('href');
@@ -39,7 +17,6 @@ function makeExternalLinksOpenInNewTab() {
 
 document.addEventListener('DOMContentLoaded', () => {
   makeExternalLinksOpenInNewTab();
-  stackGalleryItemsVertically();
 
   const preview = document.querySelector('.hover-preview');
 
