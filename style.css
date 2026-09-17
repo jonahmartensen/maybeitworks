@@ -358,11 +358,11 @@ body:not(.home-page) .hero-screen {
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(20px, 2.4vw, 36px);
-  width: min(100%, 1280px);
-  max-width: 1280px;
+  gap: clamp(12px, 1.44vw, 21.6px);
+  width: min(100%, 1408px);
+  max-width: 1408px;
   margin: 0 auto;
-  padding: 0 clamp(20px, 3vw, 36px);
+  padding: 0 clamp(16px, 2.4vw, 28.8px);
 }
 
 .detail-gallery {
