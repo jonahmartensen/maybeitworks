@@ -531,8 +531,20 @@ body:not(.home-page) .hero-screen {
     padding: 24px 20px 80px;
   }
 
+  body.projects-page {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  body.projects-page > main.projects-page {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
   .gallery {
     grid-template-columns: 1fr;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 
   .gallery-item img {
