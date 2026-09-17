@@ -79,12 +79,12 @@ main.project-page a[href="projects.html"].active {
 .project-header-label {
   display: inline-block;
   line-height: 1;
-  font-style: italic;
+  font-style: normal;
 }
 
 .project-header-trigger:hover .project-header-label,
 .project-header-trigger:focus-within .project-header-label {
-  font-style: italic;
+  font-style: normal;
 }
 
 .project-header-menu {
@@ -492,6 +492,11 @@ body:not(.home-page) .hero-screen {
     --header-height: 120px;
   }
 
+  .hero-image {
+    object-fit: contain;
+    background: #f2f2f2;
+  }
+
   header {
     padding: 16px 20px;
   }
@@ -524,6 +529,25 @@ body:not(.home-page) .hero-screen {
   .agenda-page,
   .projects-page {
     padding: 24px 20px 80px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    aspect-ratio: auto;
+    object-fit: contain;
+    background: #f2f2f2;
+  }
+
+  .image-modal {
+    padding: 12px;
+  }
+
+  .image-modal img {
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
   }
 
   .about-text p {
