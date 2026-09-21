@@ -1,0 +1,11 @@
+{% if galleryImages %}
+<section class="detail-gallery mobile-detail-gallery" aria-label="Project detail gallery">
+  {% for image in galleryImages %}
+  <article class="detail-gallery-item">
+    <button class="detail-gallery-button" type="button" data-image="{{ image }}" aria-label="Open project image in full screen">
+      <img src="{{ image }}" alt="Project detail image {{ forloop.index }}" loading="lazy" decoding="async">
+    </button>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
